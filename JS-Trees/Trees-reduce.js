@@ -13,4 +13,4 @@ const tree = ['A', [
   ['D', [['G'], ['J']]],
 ]];
 
-reduce(acc => acc + 1, tree, 0);
+reduce(acc => acc + 1, tree, 0); //8
