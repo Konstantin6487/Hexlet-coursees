@@ -12,8 +12,6 @@ const convert = list => {
   }, {});
 };
 
-export default convert;
-
 convert([]); // => {}
 convert([['key', 'value']]); // { key: 'value' }
 convert([['key', 'value'], ['key2', 'value2']]); // { key: 'value', key2: 'value2' }
