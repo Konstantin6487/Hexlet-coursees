@@ -12,8 +12,6 @@ const flatten = ([first, ...rest]) => {
   }
 };
 
-export default flatten;
-
 const list = [1, 2, [3, 5], [[4, 3], 2]];
 
 flatten(list);
