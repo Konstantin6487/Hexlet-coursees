@@ -30,12 +30,11 @@ const tree = {
 
 
 const reduce = (fn, tree, acc) => {
-  const { children, meta, name, type } = tree;
   const newAcc = fn(acc, tree);
-  if (type === 'file') {
+  if (tree.type === 'file') {
     return newAcc;  
   }
-  return children.reduce((iAcc, n) => reduce(fn, n, iAcc), newAcc);
+  return tree.children.reduce((iAcc, n) => reduce(fn, n, iAcc), newAcc);
 };
 
 reduce((acc, n) => acc + 1, tree, 0); //6
