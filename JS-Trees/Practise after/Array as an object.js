@@ -7,8 +7,9 @@
 */
 
 const convert = list => 
-  list.reduce((acc, [a, b]) => 
-    Array.isArray(b) ? {...acc, [a]: convert(b)} : {...acc, [a]: b}, {});
+  list.reduce((acc, [key, value]) => 
+    Array.isArray(value) ? {...acc, [key]: convert(value)} : {...acc, [key]: value}, {});
+
 
 convert([]); // => {}
 convert([['key', 'value']]); // { key: 'value' }
