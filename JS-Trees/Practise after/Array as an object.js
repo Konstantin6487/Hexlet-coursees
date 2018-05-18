@@ -6,11 +6,8 @@
 Другими словами любой массив внутри исходного массива всегда рассматривается как данные которые нужно конвертировать в объект.
 */
 
-const convert = list => {
-  return list.length === 0 ? {} : list.reduce((acc, [a, b]) => {
-    return Array.isArray(b) ? ({...acc, [a]: convert(b)}) : ({...acc, [a]: b});
-  }, {});
-};
+const convert = list => list.reduce((acc, [a, b]) => 
+  Array.isArray(b) ? {...acc, [a]: convert(b)} : {...acc, [a]: b}, {});
 
 convert([]); // => {}
 convert([['key', 'value']]); // { key: 'value' }
