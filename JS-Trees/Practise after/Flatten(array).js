@@ -7,9 +7,7 @@ const flatten = ([first, ...rest]) => {
   else if (!Array.isArray(first)) {
     return [first, ...flatten(rest)];
   }
-  else {
-    return [...flatten(first), ...flatten(rest)];
-  }
+  return [...flatten(first), ...flatten(rest)];
 };
 
 const list = [1, 2, [3, 5], [[4, 3], 2]];
